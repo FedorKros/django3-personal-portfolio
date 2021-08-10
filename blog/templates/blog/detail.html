@@ -1,0 +1,10 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+
+<h1>{{ blog.title }}</h1>
+
+<h3>--{{ blog.date|date:'F jS Y' }}--</h3>
+
+<h5 class="alert alert-secondary" role="alert">{{ blog.description|safe }}</h5>
+{% endblock %}

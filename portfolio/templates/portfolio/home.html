@@ -1,0 +1,53 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+
+    {% load static %}
+    <!--div align="center"-->
+
+    <!--dir align="center">
+    <h1 align="center" class="alert alert-primary">Home Page</h1>
+    <img class="rounded float-middle" src="{% static 'portfolio/me2.jpg' %}" height="27%" width="27%">
+    <hr-->
+    <h2 align="center" class="alert alert-primary"> My projects</h2>
+    <!--/dir-->
+<div align="center">
+    {% for project in projects %}
+
+    <h2>{{ project.title }}</h2>
+    <p>{{ project.description|safe }}</p>
+
+    {% if project.url %}
+    <br><a href="{{ project.url }}" target='_blank'><img src="{{ project.image.url }}" height="30%" width="30%"></a>
+    {% else %}
+    <br><img src="{{ project.image.url }}" height="30%" width="30%">
+    {% endif %}
+    <hr>
+    {% endfor %}
+  </div>
+
+
+    <!--div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'portfolio/me2.jpg' %}" class="d-block w-100" height="27%" width="27%">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'portfolio/me.jpg' %}" class="d-block w-100" >
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div-->
+
+
+    <!--button class="btn btn-primary" onclick="topFunction()" id="myBtn" title="Go to top">Top</button-->
+
+
+{% endblock %}
